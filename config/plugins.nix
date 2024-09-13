@@ -10,6 +10,7 @@
       enable = true;
       extensions = {
         fzf-native = {
+          # { name = "copilot"; } # enable/disable copilot
           enable = true;
         };
       };
@@ -221,9 +222,28 @@
     };
     cmp-cmdline = {
       enable = true; # autocomplete for cmdline
-    }; 
-  };
+    };
 
+    neorg = {
+      enable = true;
+      lazyLoading = true;
+    };
+  };
+ 
+  extraPlugins = [
+      (pkgs.vimUtils.buildVimPlugin {
+        inherit (pkgs.luaPackages.lua-utils-nvim) pname version src;
+      })
+
+      (pkgs.vimUtils.buildVimPlugin {
+        inherit (pkgs.luaPackages.pathlib-nvim) pname version src;
+      })
+
+      (pkgs.vimUtils.buildVimPlugin {
+        inherit (pkgs.luaPackages.nvim-nio) pname version src;
+      })
+  ];
+  
   extraConfigLua = ''
       require("telescope").load_extension("lazygit")
 

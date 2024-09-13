@@ -43,11 +43,11 @@
     # Notify
     notify = {
       enable = true;
-      backgroundColour = "#1e1e2e";
-      fps = 60;
-      render = "default";
-      timeout = 500;
-      topDown = true;
+      #backgroundColour = "#1e1e2e";
+      #fps = 60;
+      #render = "default";
+      #timeout = 500;
+      #topDown = true;
     };
 
     # Git signs in code
@@ -58,11 +58,11 @@
 
     which-key = {
       enable = true;
-      registrations = {
-        "<leader>fg" = "Find Git files with telescope";
-        "<leader>fw" = "Find text with telescope";
-        "<leader>ff" = "Find files with telescope";
-      };
+      #registrations = {
+      #  "<leader>fg" = "Find Git files with telescope";
+      #  "<leader>fw" = "Find text with telescope";
+      #  "<leader>ff" = "Find files with telescope";
+      #};
     };
 
     # Prettier fancier command window
@@ -73,52 +73,52 @@
     # Todo comments
     todo-comments = {
       enable = true;
-      colors = {
-        error = ["DiagnosticError" "ErrorMsg" "#DC2626"];
-        warning = ["DiagnosticWarn" "WarningMsg" "#FBBF24"];
-        info = ["DiagnosticInfo" "#2563EB"];
-        hint = ["DiagnosticHint" "#10B981"];
-        default = ["Identifier" "#7C3AED"];
-        test = ["Identifier" "#FF00FF"];
-      };
+      #colors = {
+      #  error = ["DiagnosticError" "ErrorMsg" "#DC2626"];
+      #  warning = ["DiagnosticWarn" "WarningMsg" "#FBBF24"];
+      #  info = ["DiagnosticInfo" "#2563EB"];
+      #  hint = ["DiagnosticHint" "#10B981"];
+      #  default = ["Identifier" "#7C3AED"];
+      #  test = ["Identifier" "#FF00FF"];
+      #};
     };
 
     # File tree
     neo-tree = {
       enable = true;
-      enableDiagnostics = true;
+      #enableDiagnostics = true;
       enableGitStatus = true;
-      enableModifiedMarkers = true;
-      enableRefreshOnWrite = true;
+      #enableModifiedMarkers = true;
+      #enableRefreshOnWrite = true;
       closeIfLastWindow = true;
-      popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
-      buffers = {
-        bindToCwd = false;
-        followCurrentFile = {
-          enabled = true;
-        };
-      };
-      window = {
-        width = 40;
-        height = 15;
-        autoExpandWidth = false;
-        mappings = {
-          "<space>" = "none";
-        };
-      };
+      #popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
+      #buffers = {
+      #  bindToCwd = false;
+      #  followCurrentFile = {
+      #    enabled = true;
+      #  };
+      #};
+      #window = {
+      #  width = 40;
+      #  height = 15;
+      #  autoExpandWidth = false;
+      #  mappings = {
+      #    "<space>" = "none";
+      #  };
+      #};
     };
 
     # Highlight word under cursor
     illuminate = {
       enable = true;
-      underCursor = false;
-      filetypesDenylist = [
-        "Outline"
-        "TelescopePrompt"
-        "alpha"
-        "harpoon"
-        "reason"
-      ];
+      #underCursor = false;
+      #filetypesDenylist = [
+      #  "Outline"
+      #  "TelescopePrompt"
+      #  "alpha"
+      #  "harpoon"
+      #  "reason"
+      #];
     };
 
     # Nix expressions in Neovim
@@ -130,22 +130,11 @@
     lsp = {
       enable = true;
       servers = {
-        # Average webdev LSPs
-        tsserver.enable = true; # TS/JS
-        cssls.enable = true; # CSS
-        tailwindcss.enable = true; # TailwindCSS
-        html.enable = true; # HTML
-        astro.enable = true; # AstroJS
-        phpactor.enable = true; # PHP
-        svelte.enable = false; # Svelte
-        vuels.enable = false; # Vue
         pyright.enable = true; # Python
         marksman.enable = true; # Markdown
         nil-ls.enable = true; # Nix
         dockerls.enable = true; # Docker
-        bashls.enable = true; # Bash
         clangd.enable = true; # C/C++
-        csharp-ls.enable = true; # C#
         yamlls.enable = true; # YAML
 
         lua-ls = { # Lua
@@ -162,7 +151,11 @@
       };
     };
 
-        cmp-emoji = {
+    luasnip = {
+      enable = true;
+    };
+
+    cmp-emoji = {
       enable = true;
     };
 
@@ -186,7 +179,6 @@
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
             keywordLength = 3;
           }
-          # { name = "copilot"; } # enable/disable copilot
           {
             name = "path"; # file system paths
             keywordLength = 3;
